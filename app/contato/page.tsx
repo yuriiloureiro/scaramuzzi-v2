@@ -34,7 +34,7 @@ export default function ContatoPage() {
                 Telefone
               </h4>
               <p className="text-xl font-serif text-secondary">
-                +55 (21) 99999-9999
+                +55 (21) 97610-9651
               </p>
             </div>
             <div>
@@ -42,7 +42,8 @@ export default function ContatoPage() {
                 Endereço
               </h4>
               <p className="text-xl font-serif text-secondary italic">
-                Barra da Tijuca, Rio de Janeiro - RJ
+                Av. das Américas, 8.585 – Sala 333 – Barra da Tijuca CEP:
+                22793-081 – Rio de Janeiro – RJ
               </p>
             </div>
           </div>

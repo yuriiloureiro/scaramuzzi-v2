@@ -49,7 +49,7 @@ export default function ImoveisPage() {
         {/* Grid de Imóveis */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12"
         >
           {filteredProperties.map((property) => (
             <motion.div

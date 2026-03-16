@@ -29,7 +29,7 @@ export default function FeaturedProperties() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
         >
           {featuredProperties.map((property) => (
             <PropertyCard key={property.id} property={property} />
