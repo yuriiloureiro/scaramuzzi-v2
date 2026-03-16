@@ -76,64 +76,109 @@ Subsolo: Capacidade para 10 carros, 2 pontos para carregamento elétrico, 2 depe
   },
   {
     id: "imovel-02",
-    code: "0051",
-    title: "Cobertura Duplex Península",
-    price: "R$ 18.500.000",
+    code: "0040",
+    title: "Casa Triplex com 4 Suítes – Projeto Aurora Grei",
+    price: "R$ 16.500.000,00",
     location: "Barra da Tijuca, Rio de Janeiro",
-    type: "Cobertura",
-    bedrooms: 5,
-    bathrooms: 5,
+    type: "Casa Triplex",
+    bedrooms: 4,
+    bathrooms: 7,
     suites: 4,
-    garage: 3,
-    area: "980",
+    garage: 4,
+    area: "837",
     image: "/images/properties/imovel-02/main.webp",
-    description:
-      "Cobertura duplex com vista panorâmica para a Lagoa de Jacarepaguá e o mar. Terraço privativo com piscina aquecida, churrasqueira e jardim suspenso. O ápice do viver contemporâneo na Península.",
+    description: `CASA TRIPLEX COM 4 SUÍTES, PROJETO AURORA GREI, À VENDA NO CONDOMÍNIO SANTA MÔNICA JARDINS NA BARRA DA TIJUCA COM SEGURANÇA 24 HORAS E ÁREA DE LAZER.
+
+1° Pavimento: Hall de entrada com porta pivotante imponente, ampla sala em vários ambientes com captação de luz natural e pé-direito de aproximadamente 7m. Suíte térrea convertida em escritório, lavabo decorado, cozinha planejada, lavanderia e dependência.
+
+2° Pavimento: Hall de acesso às suítes e copa de apoio. Suítes com closet e varandas. Suíte máster com cerca de 100m², closet máster com claraboia e jardim natural e salão de banho com hidromassagem.
+
+3° Pavimento: Salão multiúso (home theater, academia etc.), copa, lavabo e varanda com hidromassagem e área para receber.
+
+Área externa: Cinema com degrau iluminado, espaço gourmet completo (churrasqueira, forno a lenha e bancada), piscina iluminada, sauna com vista e jardim assinado pela Landscap.
+
+OBS: Imóvel será vendido apenas com móveis fixos.`,
     features: [
-      "Automação completa",
-      "Vista panorâmica para o mar",
-      "Terraço privativo",
-      "Piscina aquecida",
-      "Elevador privativo",
+      "Projeto Aurora Grei",
+      "Porta pivotante imponente",
+      "Pé-direito aproximado de 7m",
+      "Porcelanato PortoBello (1.20 x 1.20)",
+      "Suíte térrea adaptada para escritório",
+      "Suíte máster ~100m²",
+      "Closet máster com claraboia e jardim natural",
+      "Salão de banho com cubas individuais e hidromassagem",
+      "Salão multiúso no 3º pavimento",
+      "Varanda com hidromassagem",
+      "Cinema privativo com degrau iluminado",
+      "Espaço gourmet completo com churrasqueira e forno a lenha",
+      "Piscina com iluminação",
+      "Sauna com vista para o lazer",
+      "Paisagismo assinado (Landscap)",
     ],
     amenities: [
-      "Piscina aquecida",
+      "Piscina iluminada",
+      "Hidromassagem",
+      "Sauna",
+      "Cinema privativo",
+      "Área gourmet",
       "Churrasqueira",
-      "Jardim suspenso",
+      "Forno a lenha",
+      "Jardim paisagístico",
       "Segurança 24h",
-      "Academia",
+      "Varandas panorâmicas",
     ],
     gallery: generateGallery("imovel-02"),
   },
   {
     id: "imovel-03",
-    code: "0052",
-    title: "Mansão Alphaville Barra",
-    price: "R$ 31.000.000",
+    code: "0015",
+    title: "Casa Triplex Del Lago",
+    price: "R$ 18.000.000,00",
     location: "Barra da Tijuca, Rio de Janeiro",
-    type: "Mansão",
-    bedrooms: 8,
-    bathrooms: 9,
-    suites: 7,
-    garage: 8,
-    area: "2100",
+    type: "Casa Triplex",
+    bedrooms: 5,
+    bathrooms: 7,
+    suites: 5,
+    garage: 4,
+    area: "900",
     image: "/images/properties/imovel-03/main.webp",
-    description:
-      "Mansão de alto padrão em condomínio fechado com segurança 24h. Projeto assinado por renomado escritório de arquitetura, com adega climatizada, home theater, spa completo e garagem para 8 veículos.",
+    description: `CASA TRIPLEX COM 5 SUÍTES, À VENDA NO CONDOMÍNIO DEL LAGO NA BARRA DA TIJUCA COM SEGURANÇA 24 HORAS, LAZER COMPLETO E TRANSPORTE PRÓPRIO.
+
+1° Pavimento: Hall com pé-direito duplo e lago iluminado externo com acesso à sala por piso de vidro. Lavabo, ampla sala integrada à copa-cozinha, área externa, lavanderia, área de serviço e dependência.
+
+2° Pavimento: Sala íntima com painel de madeira. Quatro quartos com closets, incluindo suíte master com salão de banho, bancada dupla e banheira de imersão.
+
+3° Pavimento: Espaço com iluminação natural e duas varandas externas com vistas (incluindo Pedra da Gávea), ideal para cinema, brinquedoteca, escritório etc.
+
+Lazer: Paisagismo, jardim vertical, piscina aquecida com deck molhado, hidromassagem, sauna e espaço gourmet com churrasqueira e forno a lenha integrado à cozinha.
+
+Diferenciais técnicos: barrilete pressurizado por cômodo e 3 cisternas de 30.000L (captação de chuva para irrigação e lavagem, abastecimento sanitário e abastecimento CEDAE). Piscina e hidromassagem com controle por aplicativo (pH, temperatura e iluminação). Automação de iluminação no 1º andar e suíte do casal com possibilidade de upgrade.`,
     features: [
-      "Projeto arquitetônico assinado",
-      "Adega climatizada",
-      "Home theater",
-      "Spa completo",
-      "Automação completa",
+      "Condomínio Del Lago com lazer completo",
+      "Hall com pé-direito duplo",
+      "Lago iluminado externo + piso de vidro",
+      "Sala integrada à copa/cozinha",
+      "Suíte master com banheira de imersão",
+      "2 varandas no 3º pavimento (vista Pedra da Gávea)",
+      "Piscina aquecida com deck molhado",
+      "Jardim vertical e paisagismo",
+      "Espaço gourmet com churrasqueira e forno a lenha",
+      "Barrilete pressurizado por cômodo",
+      "3 cisternas de 30.000L (captação de chuva e abastecimento)",
+      "Controle via app: pH, temperatura e iluminação (piscina/hidro)",
+      "Automação de iluminação (1º andar e suíte do casal)",
     ],
     amenities: [
-      "Piscina",
-      "Spa",
-      "Home theater",
+      "Piscina aquecida",
+      "Deck molhado",
+      "Hidromassagem",
+      "Sauna",
+      "Área gourmet",
       "Churrasqueira",
+      "Forno a lenha",
+      "Jardim vertical",
       "Segurança 24h",
-      "Garagem para 8 carros",
+      "Varandas com vista",
     ],
     gallery: generateGallery("imovel-03"),
   },
