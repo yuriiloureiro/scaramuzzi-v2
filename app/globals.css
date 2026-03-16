@@ -10,4 +10,28 @@
   /* Fontes */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
   --font-serif: var(--font-playfair-display), ui-serif, Georgia;
+
+  /* Refinamento de Espaçamento (Estilo Framer) */
+  --tracking-tighter: -0.04em; /* Para títulos grandes ficarem "juntos" e elegantes */
+  --tracking-widest: 0.3em; /* Para labels pequenas e modernas */
+}
+
+/* Regras Globais de Estilo */
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tighter; /* Aplica o aperto nos títulos automaticamente */
+  }
+
+  /* Suaviza a rolagem da página */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Garante que o texto padrão seja nítido */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
