@@ -1,27 +1,36 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const [type, setType] = useState("todos");
 
-  // Lógica de Parallax: Conforme o usuário scrolla, a imagem e o texto se movem em velocidades diferentes
+  const handleSearch = () => {
+    const section = document.getElementById("imoveis-destaque");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      const event = new CustomEvent("hero-search", { detail: { type } });
+      window.dispatchEvent(event);
+    }
+  };
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
   const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-[110vh] flex flex-col items-center justify-center text-center overflow-hidden bg-secondary"
+      className="relative h-[100vh] md:h-[110vh] flex flex-col items-center justify-center text-center overflow-hidden bg-secondary px-4"
     >
-      {/* Background com Parallax e Zoom Inicial */}
+      {/* Background */}
       <motion.div style={{ y: yImage }} className="absolute inset-0 z-0">
         <motion.img
           initial={{ scale: 1.2, opacity: 0 }}
@@ -31,55 +40,52 @@ export default function Hero() {
           alt="Luxury Real Estate"
           className="w-full h-full object-cover"
         />
-        {/* Overlay Cinematográfico: Gradiente que dá profundidade */}
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-secondary/40 to-secondary" />
       </motion.div>
 
-      {/* Conteúdo Principal com Parallax de Texto */}
+      {/* Conteúdo Principal */}
       <motion.div
         style={{ y: yText, opacity: opacityText }}
-        className="relative z-10 max-w-5xl px-6"
+        className="relative z-10 max-w-5xl w-full flex flex-col items-center"
       >
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-[10px] md:text-xs uppercase tracking-[0.5em] font-bold text-primary mb-8 block"
+          className="text-[9px] md:text-xs uppercase tracking-[0.4em] font-bold text-primary mb-4 md:mb-8 block"
         >
-          Estilo de vida exclusivo no Rio de Janeiro
+          Estilo de vida exclusivo no Rio
         </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 1, ease: [0.19, 1, 0.22, 1] }}
-          className="font-serif text-5xl md:text-8xl text-white leading-[0.9] tracking-tighter mb-12"
+          className="font-serif text-4xl md:text-8xl text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-16"
         >
           Encontre o seu <br />
           <span className="italic text-primary">refúgio</span> de luxo.
         </motion.h1>
-      </motion.div>
 
-      {/* Barra de Busca Flutuante (Fixa no final da Hero) */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-20 left-0 w-full z-20 px-6"
-      >
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-3xl p-2 md:p-3 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-2 border border-white/10">
+        {/* Barra de Busca Integrada ao Fluxo (Não absoluta no mobile) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="w-full max-w-md md:max-w-5xl z-[100]"
+        >
+          <div className="bg-white/10 backdrop-blur-3xl p-3 md:p-3 rounded-[2rem] md:rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-1 border border-white/10">
             {/* Localização */}
-            <div className="flex-1 w-full px-8 py-4 text-left group flex items-center gap-4">
-              <div className="text-primary">
+            <div className="w-full md:flex-1 px-5 md:px-8 py-3 md:py-4 text-left flex items-center gap-3 border-b md:border-b-0 md:border-r border-white/5">
+              <div className="text-primary shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
@@ -88,30 +94,28 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="flex-1">
-                <span className="block text-[9px] uppercase tracking-[0.2em] font-black text-primary/80 mb-1">
+                <span className="block text-[7px] md:text-[9px] uppercase tracking-[0.2em] font-black text-primary/80">
                   Localização
                 </span>
                 <input
                   type="text"
-                  placeholder="Onde você quer morar?"
-                  className="w-full bg-transparent outline-none text-white font-semibold placeholder:text-white/30 text-sm"
+                  placeholder="Onde quer morar?"
+                  className="w-full bg-transparent outline-none text-white font-medium placeholder:text-white/20 text-xs md:text-sm"
                 />
               </div>
             </div>
 
-            <div className="hidden md:block w-[1px] h-12 bg-white/10" />
-
             {/* Tipo */}
-            <div className="flex-1 w-full px-8 py-4 text-left group flex items-center gap-4">
-              <div className="text-primary">
+            <div className="w-full md:flex-1 px-5 md:px-8 py-3 md:py-4 text-left flex items-center gap-3">
+              <div className="text-primary shrink-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
@@ -120,30 +124,42 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="flex-1">
-                <span className="block text-[9px] uppercase tracking-[0.2em] font-black text-primary/80 mb-1">
+                <span className="block text-[7px] md:text-[9px] uppercase tracking-[0.2em] font-black text-primary/80">
                   Tipo
                 </span>
-                <select className="w-full bg-transparent outline-none text-white font-semibold appearance-none cursor-pointer text-sm">
-                  <option className="bg-secondary">Casa Triplex</option>
-                  <option className="bg-secondary">Cobertura</option>
+                <select
+                  value={type}
+                  onChange={(e) => setType(e.target.value)}
+                  className="w-full bg-transparent outline-none text-white font-medium appearance-none cursor-pointer text-xs md:text-sm"
+                >
+                  <option value="todos" className="bg-secondary">
+                    Todos os tipos
+                  </option>
+                  <option value="Casa Triplex" className="bg-secondary">
+                    Casa Triplex
+                  </option>
+                  <option value="Casa de Condomínio" className="bg-secondary">
+                    Casa de Condomínio
+                  </option>
+                  <option value="Cobertura" className="bg-secondary">
+                    Cobertura
+                  </option>
+                  <option value="Casa" className="bg-secondary">
+                    Casa
+                  </option>
                 </select>
               </div>
             </div>
 
-            <button className="w-full md:w-auto px-12 py-5 bg-primary text-secondary font-bold uppercase tracking-[0.2em] text-[11px] rounded-2xl md:rounded-full hover:bg-white transition-all duration-500 shadow-xl shadow-primary/20">
+            {/* Botão */}
+            <button
+              onClick={handleSearch}
+              className="w-full md:w-auto px-8 md:px-12 py-4 md:py-5 bg-primary text-secondary font-bold uppercase tracking-[0.2em] text-[10px] rounded-[1.5rem] md:rounded-full hover:bg-white transition-all shadow-lg mt-1 md:mt-0"
+            >
               Buscar Agora
             </button>
           </div>
-        </div>
-      </motion.div>
-
-      {/* Indicador de Scroll */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/20"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent mx-auto" />
+        </motion.div>
       </motion.div>
     </section>
   );

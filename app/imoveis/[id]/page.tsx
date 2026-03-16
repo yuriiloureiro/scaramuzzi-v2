@@ -1,3 +1,4 @@
+import FadeIn from "@/components/ui/FadeIn";
 import { featuredProperties } from "@/data/properties";
 import PropertyHero from "@/components/property/PropertyHero";
 import PropertyStats from "@/components/property/PropertyStats";

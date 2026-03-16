@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import FadeIn from "@/components/ui/FadeIn";
+import Link from "next/link";
 
 export default function SobrePage() {
   return (
     <main className="bg-background min-h-screen">
-      {/* Hero da Página Sobre */}
+      {/* Hero */}
       <section className="pt-40 pb-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <motion.span
@@ -68,7 +70,8 @@ export default function SobrePage() {
                 nossos clientes.
               </p>
 
-              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-secondary/5">
+              {/* Stats — agora com 3 números */}
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-secondary/5">
                 <div>
                   <span className="block text-3xl font-serif text-secondary mb-1">
                     15+
@@ -85,40 +88,54 @@ export default function SobrePage() {
                     Imóveis Exclusivos
                   </span>
                 </div>
+                <div>
+                  <span className="block text-3xl font-serif text-secondary mb-1">
+                    R$2Bi+
+                  </span>
+                  <span className="text-[10px] uppercase tracking-widest text-secondary/40 font-bold">
+                    Em Negociações
+                  </span>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Seção de Valores / Diferenciais */}
+      {/* Valores — agora com FadeIn no scroll */}
       <section className="py-24 bg-secondary text-white px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-          <div className="space-y-4">
-            <span className="text-primary font-serif text-4xl italic">01.</span>
-            <h3 className="text-xl font-serif tracking-tight">Exclusividade</h3>
-            <p className="text-white/40 font-light leading-relaxed">
-              Trabalhamos com um portfólio selecionado, garantindo foco total em
-              cada negociação.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <span className="text-primary font-serif text-4xl italic">02.</span>
-            <h3 className="text-xl font-serif tracking-tight">Transparência</h3>
-            <p className="text-white/40 font-light leading-relaxed">
-              Processos claros e segurança jurídica em todas as etapas da compra
-              ou venda.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <span className="text-primary font-serif text-4xl italic">03.</span>
-            <h3 className="text-xl font-serif tracking-tight">
-              Expertise Local
-            </h3>
-            <p className="text-white/40 font-light leading-relaxed">
-              Conhecimento profundo de cada condomínio e rua da Barra da Tijuca.
-            </p>
-          </div>
+          {[
+            {
+              num: "01.",
+              title: "Exclusividade",
+              text: "Trabalhamos com um portfólio selecionado, garantindo foco total em cada negociação.",
+            },
+            {
+              num: "02.",
+              title: "Transparência",
+              text: "Processos claros e segurança jurídica em todas as etapas da compra ou venda.",
+            },
+            {
+              num: "03.",
+              title: "Expertise Local",
+              text: "Conhecimento profundo de cada condomínio e rua da Barra da Tijuca.",
+            },
+          ].map((item, index) => (
+            <FadeIn key={item.num} delay={index * 0.15} direction="up">
+              <div className="space-y-4">
+                <span className="text-primary font-serif text-4xl italic">
+                  {item.num}
+                </span>
+                <h3 className="text-xl font-serif tracking-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="text-white/40 font-light leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </section>
     </main>
