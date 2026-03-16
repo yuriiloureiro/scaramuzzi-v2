@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Scaramuzzi Imóveis V2 - Luxury Real Estate Interface
 
-## Getting Started
+Este projeto é uma reengenharia de interface completa, transformando uma plataforma imobiliária legada (WordPress) em uma aplicação moderna de alta performance focada no mercado de luxo.
 
-First, run the development server:
+[Link para o Projeto Online](https://scaramuzzi-v2.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 O Desafio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O objetivo foi elevar a percepção de valor da marca através de uma interface minimalista, performance extrema e uma experiência de usuário (UX) fluida, utilizando o que há de mais moderno no ecossistema React.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 14** (App Router)
+- **TypeScript** (Type safety para dados imobiliários)
+- **Tailwind CSS** (Design System customizado)
+- **Framer Motion** (Animações cinematográficas e Parallax)
+- **Lucide React** (Iconografia)
 
-## Learn More
+## 💎 Diferenciais Técnicos
 
-To learn more about Next.js, take a look at the following resources:
+- **Arquitetura de Componentes:** Estrutura escalável e reutilizável.
+- **Filtros Inteligentes:** Sistema de busca na Hero integrado à listagem via Custom Events.
+- **Performance:** Otimização de imagens e fontes para atingir score máximo no Lighthouse.
+- **Mobile First:** Interface totalmente adaptada para dispositivos móveis, mantendo a elegância do design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Como rodar o projeto localmente
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone o repositório
+2. Instale as dependências: `npm install`
+3. Rode o projeto: `npm run dev`
