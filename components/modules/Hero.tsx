@@ -36,11 +36,11 @@ export default function Hero() {
           initial={{ scale: 1.2, opacity: 0 }}
           animate={{ scale: 1.05, opacity: 1 }}
           transition={{ duration: 2.5, ease: [0.19, 1, 0.22, 1] }}
-          src="/images/hero/background-hero.webp"
+          src="/images/hero/background-hero-barra-v2.webp"
           alt="Luxury Real Estate"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[60%_top] saturate-[0.88] md:object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-secondary/40 to-secondary" />
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-secondary/50 to-secondary/85" />
       </motion.div>
 
       {/* Conteúdo Principal */}
